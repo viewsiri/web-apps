@@ -1,0 +1,13 @@
+<%
+
+  companies = Company.all
+
+%>
+
+<h1>Companies</h1>
+
+<ul>
+  <% for company in companies%>
+    <li><%= company["name"]%> - <%= company["city"]%>, <%= company["state"]%></li>
+  <% end %>
+</ul>

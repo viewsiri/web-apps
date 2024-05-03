@@ -1,0 +1,30 @@
+<%
+
+ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+suits = ["clubs", "diamonds", "hearts", "spades"]
+
+deck = []
+for rank in ranks
+  for suit in suits
+    card = "#{rank}_of_#{suit}"
+    deck.push(card)
+  end
+end
+
+shuffled_deck = deck.shuffle
+hand = shuffled_deck[0,5]
+
+for card in hand
+  puts card
+end
+
+%>
+
+<% for card in hand %>
+  <img src="/images/cards/<%=card%>.svg">
+
+<% end %>
+
+<p>
+<a href="/cards">Deal Again</a>
+</p>
